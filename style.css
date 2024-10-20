@@ -52,9 +52,19 @@ body{
     padding: 5px 1em;
     background-color: var(--bg2);
     border-right: 1px solid var(--efeito-cor2);
+    
+    
     position: sticky;
     top: 0;
     align-self: self-start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+#menu-lateral.close{
+    padding: 5px;
+    width: 60px;
 }
 
 #menu-lateral > ul > li:first-child{
@@ -80,7 +90,7 @@ body{
     color: var(--txt-cor);
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
 }
 
 
@@ -118,16 +128,47 @@ body{
 #menu-lateral .sub-menu{
     display: grid;
     transition: 01s ease;
+    grid-template-rows: 0fr;
+
+    > div{
+        overflow: hidden;
+    }
 }
 
 #menu-lateral .sub-menu.show{
-
+    grid-template-rows: 1fr;
 }
 
 
+.baixo-btn svg{
+    transition: 200ms ease;
+}
+
+.rotate svg:last-child{
+    rotate: -180deg;
+}
+
+#menu-lateral .sub-menu a{
+    padding-left: 2em;
+}
+
+#toggle-btn{
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+
+    svg{
+        transition: rotate 150ms ease;
+    }
+}
 
 
-
+#toggle-btn:hover{
+    background-color: var(--efeito-cor);
+}
 
 /* MAIN STYLE */
 
